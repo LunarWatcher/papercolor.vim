@@ -817,18 +817,21 @@ fun! s:set_format_attributes()
     let s:ft_reverse = " cterm=reverse gui=reverse "
     let s:ft_italic  = " cterm=italic gui=italic "
     let s:ft_italic_bold = " cterm=italic,bold gui=italic,bold "
+    let s:ft_undercurl = " gui=undercurl "
   elseif s:mode == s:MODE_256_COLOR
     let s:ft_bold    = " cterm=bold "
     let s:ft_none    = " cterm=none "
     let s:ft_reverse = " cterm=reverse "
     let s:ft_italic  = " cterm=italic "
     let s:ft_italic_bold = " cterm=italic,bold "
+    let s:ft_undercurl = ""
   else
     let s:ft_bold    = ""
     let s:ft_none    = " cterm=none "
     let s:ft_reverse = " cterm=reverse "
     let s:ft_italic  = ""
     let s:ft_italic_bold = ""
+    let s:ft_undercurl = ""
   endif
 
   " Unless instructed otherwise either by theme setting or user overriding
@@ -1247,7 +1250,7 @@ fun! s:apply_syntax_highlightings()
   exec 'hi SpecialComment' . s:fg_comment . s:ft_bold
   exec 'hi Debug' . s:fg_orange
 
-  exec 'hi Error' . s:fg_error_fg . s:bg_error_bg
+  exec 'hi Error' . s:fg_error_fg . s:bg_error_bg . s:ft_undercurl . s:sp_red
   exec 'hi Todo' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
 
   exec 'hi Title' . s:fg_comment
@@ -1313,6 +1316,9 @@ fun! s:apply_syntax_highlightings()
   exec 'hi vimHiGroup' . s:fg_foreground
   exec 'hi vimGroup' . s:fg_navy . s:ft_bold
   exec 'hi vimOnlyOption' . s:fg_blue
+  " Helpfile
+  exec 'hi HelpStar' . s:fg_blue . s:ft_bold
+  exec 'hi HelpBar' . s:fg_blue . s:ft_bold
 
   " Makefile Highlighting
   exec 'hi makeIdent' . s:fg_blue
@@ -2260,7 +2266,7 @@ fun! s:apply_syntax_highlightings()
   exec 'hi CocInfoFloat' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
   exec 'hi CocHintFloat' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
 
-  exec 'hi CocErrorHighlight' . s:fg_foreground . s:bg_spellbad
+  exec 'hi CocErrorHighlight' . s:fg_foreground . s:bg_spellbad . s:ft_undercurl . s:sp_red
   exec 'hi CocWarningHighlight' . s:fg_foreground . s:bg_spellcap
   exec 'hi CocInfoHighlight' . s:fg_foreground . s:bg_spellcap
   exec 'hi CocHintHighlight' . s:fg_foreground . s:bg_spellcap
