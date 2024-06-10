@@ -1326,9 +1326,10 @@ fun! s:apply_syntax_highlightings()
   exec 'hi vimOnlyOption' . s:fg_blue
 
   " Helpfile
-  exec 'hi link helpStar Operator'
-  exec 'hi link helpBar Operator'
-  exec 'hi link helpBacktick Operator'
+  exec 'hi link helpIgnore Typedef'
+  exec 'hi link helpStar Typedef'
+  exec 'hi link helpBar Typedef'
+  exec 'hi link helpBacktick Typedef'
 
   " Makefile Highlighting
   exec 'hi makeIdent' . s:fg_blue
