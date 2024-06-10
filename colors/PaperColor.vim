@@ -817,14 +817,14 @@ fun! s:set_format_attributes()
     let s:ft_reverse = " cterm=reverse gui=reverse "
     let s:ft_italic  = " cterm=italic gui=italic "
     let s:ft_italic_bold = " cterm=italic,bold gui=italic,bold "
-    let s:ft_undercurl = " gui=undercurl "
+    let s:ft_undercurl = " cterm=underline gui=undercurl "
   elseif s:mode == s:MODE_256_COLOR
     let s:ft_bold    = " cterm=bold "
     let s:ft_none    = " cterm=none "
     let s:ft_reverse = " cterm=reverse "
     let s:ft_italic  = " cterm=italic "
     let s:ft_italic_bold = " cterm=italic,bold "
-    let s:ft_undercurl = ""
+    let s:ft_undercurl = " cterm=underline "
   else
     let s:ft_bold    = ""
     let s:ft_none    = " cterm=none "
@@ -921,13 +921,21 @@ fun! s:set_color_variables()
     fun! s:create_color_variables(color_name, rich_color, term_color)
       let {'s:fg_' . a:color_name} = ' ctermfg=' . a:rich_color[1] . ' '
       let {'s:bg_' . a:color_name} = ' ctermbg=' . a:rich_color[1] . ' '
-      let {'s:sp_' . a:color_name} = ''
+      if has('patch-8.2.863')
+          let {'s:sp_' . a:color_name} = ' ctermul=' . a:rich_color[1] . ' '
+      else
+          let {'s:sp_' . a:color_name} = ' '
+      endif
     endfun
   else
     fun! s:create_color_variables(color_name, rich_color, term_color)
       let {'s:fg_' . a:color_name} = ' ctermfg=' . a:term_color . ' '
       let {'s:bg_' . a:color_name} = ' ctermbg=' . a:term_color . ' '
-      let {'s:sp_' . a:color_name} = ''
+      if has('patch-8.2.863')
+          let {'s:sp_' . a:color_name} = ' ctermul=' . a:term_color . ' '
+      else
+          let {'s:sp_' . a:color_name} = ' '
+      endif
     endfun
   endif
   " }}}
