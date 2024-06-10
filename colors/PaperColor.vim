@@ -1185,7 +1185,7 @@ fun! s:apply_syntax_highlightings()
   exec 'hi ModeMsg' . s:fg_olive
   exec 'hi MoreMsg' . s:fg_olive
   exec 'hi Question' . s:fg_olive
-  exec 'hi WarningMsg' . s:fg_pink
+  exec 'hi WarningMsg' . s:fg_pink . s:ft_undercurl
   exec 'hi MatchParen' . s:fg_matchparen_fg . s:bg_matchparen_bg
   exec 'hi Folded' . s:fg_folded_fg . s:bg_folded_bg
   exec 'hi WildMenu' . s:fg_wildmenu_fg . s:bg_wildmenu_bg . s:ft_bold
@@ -1324,9 +1324,11 @@ fun! s:apply_syntax_highlightings()
   exec 'hi vimHiGroup' . s:fg_foreground
   exec 'hi vimGroup' . s:fg_navy . s:ft_bold
   exec 'hi vimOnlyOption' . s:fg_blue
+
   " Helpfile
-  exec 'hi HelpStar' . s:fg_blue . s:ft_bold
-  exec 'hi HelpBar' . s:fg_blue . s:ft_bold
+  exec 'hi link helpStar Operator'
+  exec 'hi link helpBar Operator'
+  exec 'hi link helpBacktick Operator'
 
   " Makefile Highlighting
   exec 'hi makeIdent' . s:fg_blue
@@ -2275,7 +2277,7 @@ fun! s:apply_syntax_highlightings()
   exec 'hi CocHintFloat' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
 
   exec 'hi CocErrorHighlight' . s:fg_foreground . s:bg_spellbad . s:ft_undercurl . s:sp_red
-  exec 'hi CocWarningHighlight' . s:fg_foreground . s:bg_spellcap
+  exec 'hi CocWarningHighlight' . s:fg_foreground . s:bg_spellcap . s:ft_undercurl
   exec 'hi CocInfoHighlight' . s:fg_foreground . s:bg_spellcap
   exec 'hi CocHintHighlight' . s:fg_foreground . s:bg_spellcap
 
