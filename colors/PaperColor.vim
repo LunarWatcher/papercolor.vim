@@ -1185,7 +1185,7 @@ fun! s:apply_syntax_highlightings()
   exec 'hi ModeMsg' . s:fg_olive
   exec 'hi MoreMsg' . s:fg_olive
   exec 'hi Question' . s:fg_olive
-  exec 'hi WarningMsg' . s:fg_pink . s:ft_undercurl
+  exec 'hi WarningMsg' . s:fg_pink
   exec 'hi MatchParen' . s:fg_matchparen_fg . s:bg_matchparen_bg
   exec 'hi Folded' . s:fg_folded_fg . s:bg_folded_bg
   exec 'hi WildMenu' . s:fg_wildmenu_fg . s:bg_wildmenu_bg . s:ft_bold
@@ -1258,7 +1258,7 @@ fun! s:apply_syntax_highlightings()
   exec 'hi SpecialComment' . s:fg_comment . s:ft_bold
   exec 'hi Debug' . s:fg_orange
 
-  exec 'hi Error' . s:fg_error_fg . s:bg_error_bg . s:ft_undercurl . s:sp_red
+  exec 'hi Error' . s:fg_error_fg . s:bg_error_bg
   exec 'hi Todo' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
 
   exec 'hi Title' . s:fg_comment
