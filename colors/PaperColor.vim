@@ -2182,6 +2182,10 @@ fun! s:apply_syntax_highlightings()
   exec 'hi NERDTreeOpenable' . s:fg_aqua . s:ft_bold
   exec 'hi NERDTreeClosable' . s:fg_pink
 
+  " Plugin: vim-fern-git-status
+  exec 'hi FernGitStatusUnmerged' . s:fg_error_fg . s:bg_error_bg
+  exec 'hi FernGitStatusWorktree' . s:fg_pink
+
   " Plugin: Tagbar
   exec 'hi TagbarHelpTitle' . s:fg_blue . s:ft_bold
   exec 'hi TagbarHelp' . s:fg_foreground
