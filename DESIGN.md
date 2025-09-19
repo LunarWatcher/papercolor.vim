@@ -1,3 +1,5 @@
+TODO: this document is very out of date, and it's really bad, and needs to be rewritten in its entirety.
+
 Design Guideline
 ================
 

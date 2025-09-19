@@ -1,9 +1,4 @@
-" Theme: PaperColor
-" Author: Nikyle Nguyen <NLKNguyen@MSN.com>
-" License: MIT
-" Source: http://github.com/NLKNguyen/papercolor-theme
-
-let s:version = '0.9.x'
+let s:version = '1.0.0-alpha1'
 
 " Note on navigating this source code:
 " - Use folding feature to collapse/uncollapse blocks of marked code
@@ -22,8 +17,8 @@ let s:themes = {}
 fun! s:register_default_theme()
   " Theme name should be lowercase
   let s:themes['default'] = {
-        \   'maintainer'  : 'Nikyle Nguyen <me@Nikyle.com>',
-        \   'source' : 'http://github.com/NLKNguyen/papercolor-theme',
+        \   'maintainer'  : 'LunarWatcher <oliviawolfie@pm.me>',
+        \   'source' : 'http://github.com/LunarWatcher/papercolor-theme',
         \   'description' : 'The original PaperColor Theme, inspired by Google Material Design',
         \   'options' : {
         \       'allow_bold': 1
@@ -2347,8 +2342,8 @@ endfun
 fun! g:PaperColor()
   echom 'PaperColor Theme Framework'
   echom '  version ' . s:version
-  echom '  by Nikyle Nguyen et al.'
-  echom '  at https://github.com/NLKNguyen/papercolor-theme/'
+  echom '  by Nikyle Nguyen et al., currently maintained by LunarWatcher'
+  echom '  at https://github.com/LunarWatcher/papercolor-theme/'
   echom ' '
   echom 'Current theme: ' . s:theme_name
   echom '  ' . s:selected_theme['description']

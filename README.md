@@ -1,60 +1,12 @@
+# Papercolor
 
-<p align="center">
-<img alt="License: MIT" src="https://user-images.githubusercontent.com/4667129/100821515-6346d780-3405-11eb-882f-405c8d66a2b6.png" />
-</p>
+This is a fork of [NLKNguyen/papercolor-theme](https://github.com/NLKNguyen/papercolor-theme). The theme itself is mostly considered feature-complete, and I lack the design skills to do any meaningful theming-related developments. This fork exists because the upstream repo has bugs I need fixed, and lacks support for (among other plugins), [yegappan/lsp](https://github.com/yegappan/lsp).
 
+> [!warning]
+>
+> In the future, the theme might be migrated to vim9script. This will break neovim support, so neovim users are encouraged to not use this fork, or switch to the superior version of Vim that doesn't break the fucking clipboard every other version.
 
-<p align="center">
-
-<!-- [![](https://img.shields.io/github/issues-raw/NLKNguyen/papercolor-theme.svg?maxAge=2592000)](https://github.com/NLKNguyen/papercolor-theme/issues)  -->
-
-<!-- [![Travis CI Build Status](https://travis-ci.org/NLKNguyen/papercolor-theme.svg?branch=master)](https://travis-ci.org/NLKNguyen/papercolor-theme) -->
-
-  <a href="https://github.com/NLKNguyen/papercolor-theme/blob/master/LICENSE" target="_blank">
-    <!-- <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg" />  -->
-    <img alt="License: MIT" src="https://img.shields.io/github/license/NLKNguyen/papercolor-theme.svg?color=blueviolet&maxAge=2592000" />
-
-  </a>
-
-  <a href="https://github.com/NLKNguyen/papercolor-theme/releases" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/github/release/NLKNguyen/papercolor-theme.svg?color=green" />
-  </a>
-
-  <!-- <a href="https://github.com/NLKNguyen/papercolor-theme/issues" target="_blank">
-    <img alt="Open issues" src="https://img.shields.io/github/issues-raw/NLKNguyen/papercolor-theme.svg?maxAge=2592000" />
-  </a> -->
-
-  <!-- <a href="https://github.com/NLKNguyen/papercolor-theme/graphs/commit-activity" target="_blank">
-    <img alt="Last commit" src="https://img.shields.io/github/last-commit/NLKNguyen/papercolor-theme?color=green" />
-  </a> -->
-
-  <a href="https://github.com/NLKNguyen/papercolor-theme/issues" target="_blank">
-    <img alt="Closed issues" src="https://img.shields.io/github/issues-closed-raw/NLKNguyen/papercolor-theme.svg?maxAge=2592000" />
-  </a>
-
-  <a href="https://www.patreon.com/Nikyle" title="Donate to this project using Patreon">
-    <img src="https://img.shields.io/badge/support%20me-patreon-red.svg" alt="Patreon donate button" />
-  </a>
-
-  <a href="https://opencollective.com/papercolor-theme" title="Sponsor this project through Open Collective">
-    <img src="https://img.shields.io/badge/sponsor-open%20collective-lightblue.svg" alt="Open Collective donate button" />
-  </a>
-
-  <a href="https://paypal.me/NLKNguyen" title="Donate one time via PayPal">
-    <img src="https://img.shields.io/badge/paypal-me-blue.svg" alt="PayPal donate button" />
-  </a>
-
-  <a href="https://www.amazon.com/gp/registry/wishlist/3E0E6ZS7RQ5GS/" title="Send a gift through my Amazon wishlist">
-    <img src="https://img.shields.io/badge/send%20a%20gift-amazon-darkorange.svg" alt="Amazon donate button" />
-  </a>
-
-</p>
-
-<p align="center">
-  <a href="https://www.buymeacoffee.com/Nikyle" target="_blank">
-    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height=45 />
-  </a>
-</p>
+---
 
 Light & Dark color schemes for terminal and GUI **Vim** awesome editor
 
@@ -64,18 +16,9 @@ It is optimized to load fast and support 4-bit, 8-bit and 24-bit color terminals
 
 **Plus:** PaperColor is also a syntax highlighting framework for creating color themes, in which the PaperColor theme you see here is the default. If you want to create your own theme, consider creating on top of PaperColor to leverage 100% its functionality and still have your own specialization.
 
-![Light](https://nlknguyen.files.wordpress.com/2015/05/asm.png)
+## ✨ Inclusive support
 
-![Dark](https://nlknguyen.files.wordpress.com/2015/05/c-dark-split.png)
-
-***
-Why was this theme created? [Read the background story](https://dephony.com/blog/software-updates/papercolor-theme-v1-0/)
-***
-
-
-# ✨ Inclusive support
-
-## 🎨 Colors
+### 🎨 Colors
 
 Support True / GUI color (24-bit) and identical **256 color** (8-bit) that the default theme is based on.
 
@@ -107,7 +50,7 @@ In **8 color** and **4 color** terminals, they might lack the necessary variatio
 
 There are many more colors for many additional syntax groups, but they are designed to fall back to these base 16 colors strategically so that it can utilize the terminal native color palette (if configured like above), and also theme designers only need to provide 16 colors for a functional theme.
 
-## 🚀 Languages
+### 🚀 Languages
 
 Currently designed for these languages:
   - Haskell, Erlang, Elixir, Clojure, Elm, Purescript, F#
@@ -117,7 +60,7 @@ Currently designed for these languages:
   - Ada, COBOL, Fortran, ALGOL, *(what's your other favorite dinosaur?)*
 
 Other file types can still display well as long as your Vim is set up to recognize the language syntax even though that may not be the optimal experience. So, if the language you are working on isn't listed here, feel free to make a design request.
-## 📚 Targeted plugins for additional syntax highlighting
+### 📚 Targeted plugins for additional syntax highlighting
 
 vimdiff, netrw, [NERDTree](https://github.com/scrooloose/nerdtree), [tagbar](https://github.com/majutsushi/tagbar), [tabline](https://github.com/mkitt/tabline.vim), [vim-airline](https://github.com/bling/vim-airline), [vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides), [vim-startify](https://github.com/mhinz/vim-startify), [Agit](https://github.com/cohama/agit.vim), [vim-signify](https://github.com/mhinz/vim-signify), [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui) ([PR](https://github.com/NLKNguyen/papercolor-theme/pull/181)), [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) ([PR](https://github.com/NLKNguyen/papercolor-theme/pull/182)), [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 
@@ -147,35 +90,19 @@ The below are programming language syntax highlighting plugins that enhances upo
 * CMake: [vim-cmake-syntax](https://github.com/pboettch/vim-cmake-syntax)
 * ALGOL: [vim-algol68](https://github.com/sterpe/vim-algol68)
 
+## 🔌 Installation
 
+It's easy to use a plugin manager like [vim-plug](https://github.com/junegunn/vim-plug) (recommended for convenient `:PlugUpdate`). Add this to your .vimrc where Plug is configured, and run `:PlugInstall`
 
-# 🔌 Installation
+    Plug 'LunarWatcher/papercolor-theme'
 
-### Using a plugin manager
+Instructions for other plugin managers has been omitted, as it's usually just oneliners in all the plugin managers worth caring about.
 
-It's easy to use a plugin manager like [Vundle](https://github.com/gmarik/Vundle.vim) (recommended for convenient `:PluginUpdate`). Add this to your .vimrc where Vundle is configured, and run `:PluginInstall`
-
-    Plugin 'NLKNguyen/papercolor-theme'
-
-
-A newer and popular plugin manager is Plug that you can use as well. Similar setup like above; run `:PlugInstall`
-
-    Plug 'NLKNguyen/papercolor-theme'
-    
-To use vims built in package manager use this command
-
-    git clone https://github.com/NLKNguyen/papercolor-theme.git ~/.vim/pack/colors/start/papercolor-theme
-    
-    
-### Manual
-
-If you can't use a plugin manager (you should), then manually place `PaperColor.vim` file into `colors` folder within your Vim directory, e.g. `~/.vim/colors/`
-
-## ⭐ Configure  `.vimrc`
+### ⭐ Configure  `.vimrc`
 
 Put this in your `~/.vimrc`
 
-```VimL
+```vim
 set t_Co=256   " This is may or may not needed.
 
 set background=light
@@ -184,7 +111,7 @@ colorscheme PaperColor
 
 Or using the dark version:
 
-```VimL
+```vim
 set background=dark
 colorscheme PaperColor
 ```
@@ -199,7 +126,7 @@ To quickly toggle between them, use [vim-unimpaired](https://github.com/tpope/vi
 set number
 set laststatus=2
 ```
-# 🛠️ User Customization
+## 🛠️ User Customization
 
 
 This theme currently provides theme options and language-specific options. All config options can be stored in global variable `g:PaperColor_Theme_Options` which can be set in your `.vimrc`
@@ -209,11 +136,11 @@ This theme currently provides theme options and language-specific options. All c
 + This `g:PaperColor_Theme_Options` variable must be placed anywhere **before** `color PaperColor` command.
 + if the same option is provided in both a theme and a theme's variant, the value in the theme's variant options will take precedence.
 
-### Theme Options
+#### Theme Options
 
 Within section `theme`, options for each theme can be specified under the theme name. The original PaperColor theme is `default`. For example:
 
-```VimL
+```vim
 let g:PaperColor_Theme_Options = {
   \   'theme': {
   \     'default': {
@@ -225,7 +152,7 @@ let g:PaperColor_Theme_Options = {
 
 Or if you want to specify options only for a variant (dark or light) of a theme, you can specify using this pattern `[theme name].light` or `[theme name].dark`. For example:
 
-```VimL
+```vim
 let g:PaperColor_Theme_Options = {
   \   'theme': {
   \     'default.dark': {
@@ -242,7 +169,7 @@ You can override any color of the theme of interest. This example is for `defaul
 
 The overriding setting is placed in `override` key of `g:PaperColor_Theme_Options` variable that you set in `.vimrc` like this.
 
-```VimL
+```vim
 let g:PaperColor_Theme_Options = {
   \   'theme': {
   \     'default.dark': {
@@ -256,10 +183,10 @@ let g:PaperColor_Theme_Options = {
 
 ```
 
-See [DESIGN.md](https://github.com/NLKNguyen/papercolor-theme/blob/master/DESIGN.md) for more details and full list of color names.
+See [DESIGN.md](https://github.com/LunarWatcher/papercolor-theme/blob/master/DESIGN.md) for more details and full list of color names.
 
 
-#### Currently available theme options
+##### Currently available theme options
 
 option                   | value                                          | default
 ------                   | ------                                         | -------
@@ -269,7 +196,7 @@ option                   | value                                          | defa
 `override`               | dictionary of color key-value                  |
 
 
-### Language-specific options
+#### Language-specific options
 
 In general, for each language, built-in functions and constants are not highlighted.
 This is intentional; the vim syntax file often lags behind actual language development.
@@ -277,7 +204,7 @@ To override the default behavior, optionally place a language section in `g:Pape
 An example configuration is available below
 
 
-```VimL
+```vim
 let g:PaperColor_Theme_Options = {
   \   'language': {
   \     'haskell': {
@@ -296,7 +223,7 @@ let g:PaperColor_Theme_Options = {
   \ }
 ```
 
-#### Currently available language options
+##### Currently available language options
 
 language  | option                       | value     | default
 ------    | ------                       | ------    | ------
@@ -305,158 +232,10 @@ language  | option                       | value     | default
 `python`  | `highlight_builtins`         | 1: enable | 0: disable
 `haskell` | `no_bold_types`              | 1: enable | 0: disable
 
+## 📺 Screenshots
 
-### Vim-airline support
+Coming eventually. The upstream repo hosted the screenshots on a wordpress site rather than uploading them to the Git repo. The screenshots there work at the time of writing.
 
-![Vim-airline support](https://nlknguyen.files.wordpress.com/2015/05/gifrecord_2015-05-31_010251.gif)
+## License
 
-To set [vim-airline](https://github.com/bling/vim-airline) theme:
-
-```VimL
-let g:airline_theme='papercolor'
-```
-
-Note: to be able to use this theme, it is also necessary to install [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
-
-To set [lightline](https://github.com/itchyny/lightline.vim) theme:
-
-```VimL
-let g:lightline = { 'colorscheme': 'PaperColor' }
-```
-
-
-# 📺 Screenshots
-
-
-**Default Light**
-
-![Sample Ruby code](https://nlknguyen.files.wordpress.com/2015/05/ruby1.png)
-
-![Sample DTrace code](https://nlknguyen.files.wordpress.com/2015/05/dtrace1.png)
-
-![Sample MySQL code](https://nlknguyen.files.wordpress.com/2015/05/mysql.png)
-
-![Sample Assembly code](https://nlknguyen.files.wordpress.com/2015/05/asm.png)
-
-![Sample Vimdiff w/ git tool](https://cloud.githubusercontent.com/assets/4667129/24315492/9410c372-10a4-11e7-84c7-8846984bdca0.png)
-
-**Default Dark**
-
-![Sample Ruby code](https://nlknguyen.files.wordpress.com/2015/05/ruby-dark.png)
-
-![Sample Go code](https://nlknguyen.files.wordpress.com/2015/05/go-dark.png)
-
-![Sample JavaScript code](https://nlknguyen.files.wordpress.com/2015/05/javascript-dark2.png)
-
-![Sample C code](https://nlknguyen.files.wordpress.com/2015/05/c-dark-split.png)
-
-![Sample Vimdiff w/ git tool](https://cloud.githubusercontent.com/assets/4667129/24315493/94122816-10a4-11e7-8d3f-f5d92a064a14.png)
-
-
-*Have screenshots to contribute?* Use [this thread](https://github.com/NLKNguyen/papercolor-theme/issues/90) to upload images and get direct links to place here.
-
-# 👋 Author
-<!-- ### 🏠🏗️ [Homepage](https://github.com/NLKNguyen/papercolor-theme) -->
-
-👤 **Nikyle Nguyen**
-
-  <a href="https://twitter.com/NLKNguyen" target="_blank">
-    <img alt="Twitter: NLKNguyen" src="https://img.shields.io/twitter/follow/NLKNguyen.svg?style=social" />
-  </a>
-
-* Website: https://dephony.com/Nikyle
-* Twitter: [@NLKNguyen](https://twitter.com/NLKNguyen)
-* Github: [@NLKNguyen](https://github.com/NLKNguyen)
-* LinkedIn: [@NLKNguyen](https://linkedin.com/in/NLKNguyen)
-
-# 🤝 Contributing
-
-Give a ⭐️ if this color scheme helped you developing more comfortably!
-
-Contributions, issues and feature requests are welcome! Feel free to check [issues page](https://github.com/NLKNguyen/papercolor-theme/issues).
-
-## 🙇 Your support is very much appreciated
-
-I create open-source projects on GitHub and continue to develop/maintain as they are helping others. You can integrate and use these projects in your applications for free! You are free to modify and redistribute anyway you like, even in commercial products.
-
-I try to respond to users' feedback and feature requests as much as possible. Obviously, this takes a lot of time and efforts (speaking of mental context-switching between different projects and daily work). Therefore, if these projects help you in your work, and you want to encourage me to continue create, here are a few ways you can support me:
-
-+ 💬 Following my blog and social profiles listed above to help me connect with your network
-+ ⭐️ Starring this project and sharing with others as more users come, more great ideas arrive!
-+ ☘️ Donating any amount is a great way to help me work on the projects more regularly!
-
-<p>
-
-  <a href="https://paypal.me/NLKNguyen" target="_blank">
-      <img src="https://user-images.githubusercontent.com/4667129/101101433-71b7ff00-357d-11eb-8cf2-3c529960d422.png" height=44 />
-  </a>
-
-  <a href="https://www.patreon.com/Nikyle" target="_blank">
-    <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" height=44 style="border-radius: 5px;" />
-  </a>
-
-  <a href="https://www.buymeacoffee.com/Nikyle" target="_blank">
-      <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height=44 />
-  </a>
-
-  <a href="https://opencollective.com/papercolor-theme/donate" target="_blank">
-      <img src="https://opencollective.com/webpack/donate/button@2x.png?color=blue" height=44 />
-  </a>
-
-</p>
-
-<a href="https://github.com/NLKNguyen/papercolor-theme/graphs/contributors">
-
-  <!-- <img src="https://contributors-img.web.app/image?repo=NLKNguyen/papercolor-theme" /> -->
-  <img src="https://user-images.githubusercontent.com/4667129/101211709-72f43500-362c-11eb-84d3-bf29fdde8491.png" />
-</a>
-
-    Thanks to all contributors who make PaperColor great! ❤️
-
-***
-
-## 🔮 Related projects based on PaperColor
-
-[Material iTerm](https://github.com/stoeffel/material-iterm) theme by Christoph Hermann
-
-[Material Terminator](https://github.com/marhs/material-terminator) (terminal emulator) theme by Marco Herrero
-
-[Terminal Theme](https://www.reddit.com/r/vim/comments/36xzbs/vim_paper_color_theme_inspired_by_googles/crqbfpa) by Fixles
-
-[PaperColor Light for iTerm2](https://github.com/aseom/dotfiles/blob/master/osx/iterm2/papercolor-light.itermcolors) by ASeom Han
-
-[PaperColor for Terminal.app](https://github.com/tomotargz/papercolor-terminal-app) by tomotargz
-
-[PaperColor Light for konsole](https://raw.githubusercontent.com/z2oh/dotfiles/82bf6835948674f0ed1f98a14b82975ff2dd8f3e/konsole/paperrlight.colorscheme) by [z2oh](https://github.com/z2oh)
-
-[PaperColor Light for konsole](https://github.com/MaxG87/konsole-papercolor) (some palette collisions resolved) by [MaxG87](https://github.com/MaxG87)
-
-[PaperColor Theme for Vis Editor](https://github.com/jceb/dotfiles/blob/master/config/vis/lexers/themes/papercolor.lua) by Jan Christoph Ebersbach
-
-[Airline PaperColor Theme for Emacs Powerline](https://github.com/AnthonyDiGirolamo/airline-themes) by Anthony DiGirolamo
-
-[Airline PaperColor Theme for Vim Lightline](https://github.com/itchyny/lightline.vim)
-
-[Ninrod's `vim + tmux + zsh` dotfiles](https://github.com/ninrod/dotfiles.git) by [Filipe Silva](https://github.com/ninrod)
-
-[PaperColor for Vscode](https://github.com/Rozbo/papercolor-vscode) by [rozbo](https://github.com/rozbo)
-
-[PaperColor for Vscode Redux](https://github.com/mrworkman/papercolor-vscode-redux) by [mrworkman](https://github.com/mrworkman)
-
-[PaperColor theme for Hyper](https://github.com/rafaelrinaldi/hyper-papercolor) by [Rafael Rinaldi](https://github.com/rafaelrinaldi)
-
-[PaperColor Theme for kitty](https://github.com/craffate/papercolor-kitty) by [Cyril Raffatelli](https://github.com/craffate)
-
-[PaperColor Light theme for several tools](https://github.com/stoerdebegga/papercolor-light-contrib) by [stoerdebegga](https://github.com/stoerdebegga)
-
-[PaperColor Light theme for Alacritty](https://github.com/eendroroy/alacritty-theme/blob/master/themes/papercolor_light.yaml)
-
-Feel free to send a PR to add related projects here!
-
-***
-
-# 📝 License
-
-Copyright © 2015 - 2020 [Nikyle Nguyen](https://github.com/NLKNguyen)
-
-The project is [MIT License](https://github.com/NLKNguyen/papercolor-theme/blob/master/LICENSE)
+MIT. See [LICENSE](https://github.com/NLKNguyen/papercolor-theme/blob/master/LICENSE)
