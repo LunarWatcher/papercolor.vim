@@ -964,6 +964,8 @@ fun! s:set_color_variables()
   let color09 = get(s:palette, 'color09')
   let color10 = get(s:palette, 'color10')
   let color11 = get(s:palette, 'color11')
+  " Note to self: color12 is functionally a dead colour. It's basically not
+  " used anywhere, and in the light theme, it's identical to color13 (orange)
   let color12 = get(s:palette, 'color12')
   let color13 = get(s:palette, 'color13')
   let color14 = get(s:palette, 'color14')
@@ -1223,7 +1225,22 @@ fun! s:apply_syntax_highlightings()
   exec 'hi Float' . s:fg_orange
 
   exec 'hi Identifier' . s:fg_navy
-  exec 'hi Function' . s:fg_foreground
+  " TODO: not super happy with this selection, but it is one of the better
+  " options available:
+  " * aqua blends too much in
+  " * anything red is off the table due to error highlights
+  " * orange and green mix too much with constants, and is therefore not an
+  "   option
+  " * Standard blue is used by variables, so when semantic highlighting is
+  "   used, all variables are blue. It needs to be visually different from
+  "   variables
+  " * Pink (my initial "not super happy" option) ends up causing a _lot_ of
+  "   pink to the point where functionally everything is pink. I like pink and
+  "   all, but if everything is the same colour, it isn't syntax highlighting
+  "   anymore
+  "
+  " The purple feels kinda off, but it is one of the better options
+  exec 'hi Function' . s:fg_purple
 
   exec 'hi Statement' . s:fg_pink . s:ft_none
   exec 'hi Conditional' . s:fg_purple . s:ft_bold
@@ -1538,6 +1555,9 @@ fun! s:apply_syntax_highlightings()
   exec 'hi markdownHeadingRule' . s:fg_pink . s:ft_bold
   exec 'hi markdownH1' . s:fg_pink . s:ft_bold
   exec 'hi markdownH2' . s:fg_orange . s:ft_bold
+  exec 'hi markdownH3' . s:fg_aqua . s:ft_bold
+  exec 'hi markdownH4' . s:fg_olive . s:ft_bold
+  exec 'hi markdownH5' . s:fg_purple . s:ft_bold
   exec 'hi markdownBlockquote' . s:fg_pink
   exec 'hi markdownCodeBlock' . s:fg_olive
   exec 'hi markdownCode' . s:fg_olive
