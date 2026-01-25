@@ -1,5 +1,3 @@
-let s:version = '1.0.0-alpha1'
-
 " Note on navigating this source code:
 " - Use folding feature to collapse/uncollapse blocks of marked code
 "     zM to fold all markers in this file to see the structure of the source code
@@ -1259,30 +1257,6 @@ fun! s:apply_syntax_highlightings()
   exec 'hi Title' . s:fg_comment
   exec 'hi Global' . s:fg_blue
 
-  " Neovim (LSP) diagnostics
-  if has('nvim')
-    exec 'hi LspDiagnosticsDefaultError' . s:fg_error_fg . s:bg_error_bg
-    exec 'hi LspDiagnosticsDefaultWarning' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
-    exec 'hi LspDiagnosticsDefaultInformation' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
-    exec 'hi LspDiagnosticsDefaultHint' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
-
-    exec 'hi LspDiagnosticsUnderlineError cterm=undercurl gui=undercurl' . s:sp_error_fg
-    exec 'hi LspDiagnosticsUnderlineWarning cterm=undercurl gui=undercurl' . s:sp_todo_fg
-    exec 'hi LspDiagnosticsUnderlineInformation cterm=undercurl gui=undercurl' . s:sp_todo_fg
-    exec 'hi LspDiagnosticsUnderlineHint cterm=undercurl gui=undercurl' . s:sp_todo_fg
-
-    hi! link DiagnosticError LspDiagnosticsDefaultError
-    hi! link DiagnosticWarn LspDiagnosticsDefaultWarning
-    hi! link DiagnosticInfo LspDiagnosticsDefaultInformation
-    hi! link DiagnosticHint LspDiagnosticsDefaultHint
-
-    hi! link DiagnosticUnderlineError LspDiagnosticsUnderlineError
-    hi! link DiagnosticUnderlineWarn LspDiagnosticsUnderlineWarning
-    hi! link DiagnosticUnderlineInfo LspDiagnosticsUnderlineInformation
-    hi! link DiagnosticUnderlineHint LspDiagnosticsUnderlineHint
-
-  endif
-
   " Extension {{{
   " VimL Highlighting
   exec 'hi vimCommand' . s:fg_pink
@@ -2269,7 +2243,7 @@ fun! s:apply_syntax_highlightings()
   exec 'hi diffBDiffer' . s:fg_orange
   exec 'hi diffNewFile' . s:fg_comment
 
-  " Pluging: CoC
+  " Plugin: CoC
   exec 'hi CocFloating' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
   exec 'hi CocErrorFloat' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
   exec 'hi CocWarningFloat' . s:fg_popupmenu_fg . s:bg_popupmenu_bg . s:ft_none
@@ -2286,53 +2260,58 @@ fun! s:apply_syntax_highlightings()
   exec 'hi CocInfoSign' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
   exec 'hi CocHintSign' . s:fg_todo_fg . s:bg_todo_bg . s:ft_bold
 
-  " Debug Adapter Protocol (DAP) - Plugin: rcarriga/nvim-dap-ui
-  if has('nvim')
-    exec 'hi DapUIDecoration' . s:fg_blue
-    " DAP Scopes window
-    hi! link DapUIType Type
-    hi! link DapUIVariable Identifier
-    exec 'hi DapUIScope' . s:fg_red . s:ft_bold
-    hi! link DapUIValue Number
-    exec 'hi DapUIModifiedValue' . s:fg_orange . s:ft_bold . s:bg_error_bg
-    " DAP Breakpoints window
-    hi! link DapUILineNumber LineNr
-    hi! link DapUIBreakpointsDisabledLine LineNr
-    exec 'hi DapUIBreakpointsCurrentLine' . s:fg_linenumber_fg . s:ft_bold . s:bg_error_bg
-    exec 'hi DapUIBreakpointsInfo' . s:fg_green
-    exec 'hi DapUIBreakpointsPath' . s:fg_olive . s:ft_bold
-    " DAP Stacks window
-    exec 'hi DapUIFrameName' . s:fg_blue
-    exec 'hi DapUIThread' . s:fg_pink . s:ft_bold
-    exec 'hi DapUIStoppedThread' . s:fg_pink
-    " DAP Watches window
-    exec 'hi DapUIWatchesEmpty' . s:fg_pink . s:ft_bold
-    hi! link DapUIWatchesError DapUIWatchesEmpty
-    hi! link DapUIWatchesValue Number
-    " DAP Breakpoints window
-    exec 'hi DapUISource' . s:fg_olive
-    " DAP Floating window
-    exec 'hi DapUIFloatBorder' . s:fg_blue
-  endif
-
-  " Plugin: hrsh7th/nvim-cmp
-  if has('nvim')
-    hi! link CmpItemKindValue Number
-    hi! link CmpItemKindVariable Identifier
-    hi! link CmpItemKindKeyword Keyword
-    hi! link CmpItemKindField CmpItemKindVariable
-    exec 'hi CmpItemKindFunction' . s:fg_blue
-    hi! link CmpItemKindMethod CmpItemKindFunction
-    hi! link CmpItemKindConstructor CmpItemKindFunction
-    hi! link CmpItemKindClass Structure
-    hi! link CmpItemKindInterface Structure
-    exec 'hi CmpItemKindSnippet' . s:fg_orange
-    exec 'hi CmpItemKindFile' . s:fg_orange
-    hi! link CmpItemKindFolder CmpItemKindFile
-    exec 'hi CmpItemAbbrMatch' . s:fg_blue . s:ft_bold
-    exec 'hi CmpItemAbbrMatchFuzzy' . s:fg_blue . s:ft_bold
-    exec 'hi CmpItemAbbrDeprecated' . s:fg_foreground . ' gui=strikethrough'
-  endif
+  " Plugin: yegappan/lsp
+    " Output from :hi:
+    " LspPopup       xxx links to Pmenu
+    " LspPopupBorder xxx links to Pmenu
+    " LspTextRef     xxx links to Search
+    " LspReadRef     xxx links to DiffChange
+    " LspWriteRef    xxx links to DiffDelete
+    " LspDiagLine    xxx cleared
+    " LspDiagSignErrorText xxx links to ErrorMsg
+    " LspDiagSignWarningText xxx links to Search
+    " LspDiagSignInfoText xxx links to Pmenu
+    " LspDiagSignHintText xxx links to Question
+    " LspDiagInlineError xxx links to SpellBad
+    " LspDiagInlineWarning xxx links to SpellCap
+    " LspDiagInlineInfo xxx links to SpellRare
+    " LspDiagInlineHint xxx links to SpellLocal
+    " LspDiagVirtualTextError xxx links to SpellBad
+    " LspDiagVirtualTextWarning xxx links to SpellCap
+    " LspDiagVirtualTextInfo xxx links to SpellRare
+    " LspDiagVirtualTextHint xxx links to SpellLocal
+    " LspInlayHintsType xxx links to Label
+    " LspInlayHintsParam xxx links to Conceal
+    " LspSigActiveParameter xxx links to LineNr
+    " LspSymbolName  xxx links to Search
+    " LspSymbolRange xxx links to Visual
+    " LspSemanticNamespace xxx links to Type
+    " LspSemanticType xxx links to Type
+    " LspSemanticClass xxx links to Type
+    " LspSemanticEnum xxx links to Type
+    " LspSemanticInterface xxx links to Typedef
+    " LspSemanticStruct xxx links to Type
+    " LspSemanticTypeParameter xxx links to Type
+    " LspSemanticParameter xxx links to Identifier
+    " LspSemanticVariable xxx links to Identifier
+    " LspSemanticProperty xxx links to Identifier
+    " LspSemanticEnumMember xxx links to Constant
+    " LspSemanticEvent xxx links to Identifier
+    " LspSemanticFunction xxx links to Function
+    " LspSemanticMethod xxx links to Function
+    " LspSemanticMacro xxx links to Macro
+    " LspSemanticKeyword xxx links to Keyword
+    " LspSemanticModifier xxx links to Type
+    " LspSemanticComment xxx links to Comment
+    " LspSemanticString xxx links to String
+    " LspSemanticNumber xxx links to Number
+    " LspSemanticRegexp xxx links to String
+    " LspSemanticOperator xxx links to Operator
+    " LspSemanticDecorator xxx links to Macro
+  exec 'hi LspDiagInlineError' .. s:fg_foreground .. s:bg_spellbad .. s:ft_undercurl .. s:sp_red
+  exec 'hi LspDiagInlineWarning' .. s:fg_foreground .. s:bg_spellcap .. s:ft_undercurl
+  exec 'hi LspDiagInlineInfo' .. s:fg_foreground .. s:bg_spellcap
+  exec 'hi LspDiagInlineHint' .. s:fg_foreground .. s:bg_spellcap
 
 endfun
 " }}}
@@ -2341,14 +2320,14 @@ endfun
 " Command to show theme information {{{
 fun! g:PaperColor()
   echom 'PaperColor Theme Framework'
-  echom '  version ' . s:version
+  echom '  version [unversioned]'
   echom '  by Nikyle Nguyen et al., currently maintained by LunarWatcher'
   echom '  at https://github.com/LunarWatcher/papercolor-theme/'
   echom ' '
-  echom 'Current theme: ' . s:theme_name
-  echom '  ' . s:selected_theme['description']
-  echom '  by ' . s:selected_theme['maintainer']
-  echom '  at ' . s:selected_theme['source']
+  echom 'Current theme: ' .. s:theme_name
+  echom '  ' .. s:selected_theme['description']
+  echom '  by ' .. s:selected_theme['maintainer']
+  echom '  at ' .. s:selected_theme['source']
 
   " TODO: add diff display for theme color names between 'default' and current
   " theme if it is a custom theme, i.e. child theme.
