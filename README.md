@@ -1,10 +1,6 @@
 # Papercolor
 
-This is a fork of [NLKNguyen/papercolor-theme](https://github.com/NLKNguyen/papercolor-theme). The theme itself is mostly considered feature-complete, and I lack the design skills to do any meaningful theming-related developments. This fork exists because the upstream repo has bugs I need fixed, and lacks support for (among other plugins), [yegappan/lsp](https://github.com/yegappan/lsp).
-
-> [!warning]
->
-> In the future, the theme might be migrated to vim9script. This will break neovim support, so neovim users are encouraged to not use this fork, or switch to the superior version of Vim that doesn't break the fucking clipboard every other version.
+As of 2026-03-08, this plugin is no longer maintained. Due to [AI slop in vim](https://hachyderm.io/@AndrewRadev/116175986749599825), I have moved to emacs with evil mode.
 
 ---
 
